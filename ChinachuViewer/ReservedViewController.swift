@@ -1,5 +1,5 @@
 //
-//  FirstViewController.swift
+//  SecondViewController.swift
 //  ChinachuViewer
 //
 //  Created by kosuke.matsuishi on 2016/05/12.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-class FirstViewController: UIViewController {
+class ReservedViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()

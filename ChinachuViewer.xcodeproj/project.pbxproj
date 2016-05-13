@@ -8,8 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		8350D0101CE4153A0087B1C5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8350D00F1CE4153A0087B1C5 /* AppDelegate.swift */; };
-		8350D0121CE4153A0087B1C5 /* FirstViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8350D0111CE4153A0087B1C5 /* FirstViewController.swift */; };
-		8350D0141CE4153A0087B1C5 /* SecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8350D0131CE4153A0087B1C5 /* SecondViewController.swift */; };
+		8350D0121CE4153A0087B1C5 /* RecordedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8350D0111CE4153A0087B1C5 /* RecordedViewController.swift */; };
+		8350D0141CE4153A0087B1C5 /* ReservedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8350D0131CE4153A0087B1C5 /* ReservedViewController.swift */; };
 		8350D0171CE4153A0087B1C5 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8350D0151CE4153A0087B1C5 /* Main.storyboard */; };
 		8350D0191CE4153A0087B1C5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8350D0181CE4153A0087B1C5 /* Assets.xcassets */; };
 		8350D01C1CE4153A0087B1C5 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8350D01A1CE4153A0087B1C5 /* LaunchScreen.storyboard */; };
@@ -37,8 +37,8 @@
 /* Begin PBXFileReference section */
 		8350D00C1CE4153A0087B1C5 /* ChinachuViewer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ChinachuViewer.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8350D00F1CE4153A0087B1C5 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		8350D0111CE4153A0087B1C5 /* FirstViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstViewController.swift; sourceTree = "<group>"; };
-		8350D0131CE4153A0087B1C5 /* SecondViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondViewController.swift; sourceTree = "<group>"; };
+		8350D0111CE4153A0087B1C5 /* RecordedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordedViewController.swift; sourceTree = "<group>"; };
+		8350D0131CE4153A0087B1C5 /* ReservedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReservedViewController.swift; sourceTree = "<group>"; };
 		8350D0161CE4153A0087B1C5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		8350D0181CE4153A0087B1C5 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		8350D01B1CE4153A0087B1C5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -100,8 +100,8 @@
 			isa = PBXGroup;
 			children = (
 				8350D00F1CE4153A0087B1C5 /* AppDelegate.swift */,
-				8350D0111CE4153A0087B1C5 /* FirstViewController.swift */,
-				8350D0131CE4153A0087B1C5 /* SecondViewController.swift */,
+				8350D0111CE4153A0087B1C5 /* RecordedViewController.swift */,
+				8350D0131CE4153A0087B1C5 /* ReservedViewController.swift */,
 				8350D0151CE4153A0087B1C5 /* Main.storyboard */,
 				8350D0181CE4153A0087B1C5 /* Assets.xcassets */,
 				8350D01A1CE4153A0087B1C5 /* LaunchScreen.storyboard */,
@@ -259,9 +259,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8350D0141CE4153A0087B1C5 /* SecondViewController.swift in Sources */,
+				8350D0141CE4153A0087B1C5 /* ReservedViewController.swift in Sources */,
 				8350D0101CE4153A0087B1C5 /* AppDelegate.swift in Sources */,
-				8350D0121CE4153A0087B1C5 /* FirstViewController.swift in Sources */,
+				8350D0121CE4153A0087B1C5 /* RecordedViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -488,6 +488,7 @@
 				8350D0381CE4153A0087B1C5 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		8350D0391CE4153A0087B1C5 /* Build configuration list for PBXNativeTarget "ChinachuViewerTests" */ = {
 			isa = XCConfigurationList;
@@ -496,6 +497,7 @@
 				8350D03B1CE4153A0087B1C5 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		8350D03C1CE4153A0087B1C5 /* Build configuration list for PBXNativeTarget "ChinachuViewerUITests" */ = {
 			isa = XCConfigurationList;
@@ -504,6 +506,7 @@
 				8350D03E1CE4153A0087B1C5 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
