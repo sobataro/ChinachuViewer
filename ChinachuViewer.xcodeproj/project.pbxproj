@@ -15,6 +15,8 @@
 		8350D01C1CE4153A0087B1C5 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8350D01A1CE4153A0087B1C5 /* LaunchScreen.storyboard */; };
 		8350D0271CE4153A0087B1C5 /* ChinachuViewerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8350D0261CE4153A0087B1C5 /* ChinachuViewerTests.swift */; };
 		8350D0321CE4153A0087B1C5 /* ChinachuViewerUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8350D0311CE4153A0087B1C5 /* ChinachuViewerUITests.swift */; };
+		8377485C1CE95993007BC92F /* RecordedSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8377485B1CE95993007BC92F /* RecordedSession.swift */; };
+		83E26C1F1CE56BCC00C9FBED /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 83E26C1E1CE56BCC00C9FBED /* Alamofire.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +51,8 @@
 		8350D02D1CE4153A0087B1C5 /* ChinachuViewerUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ChinachuViewerUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		8350D0311CE4153A0087B1C5 /* ChinachuViewerUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChinachuViewerUITests.swift; sourceTree = "<group>"; };
 		8350D0331CE4153A0087B1C5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		8377485B1CE95993007BC92F /* RecordedSession.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecordedSession.swift; sourceTree = "<group>"; };
+		83E26C1E1CE56BCC00C9FBED /* Alamofire.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Alamofire.framework; path = Carthage/Build/iOS/Alamofire.framework; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,6 +60,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				83E26C1F1CE56BCC00C9FBED /* Alamofire.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -79,6 +84,7 @@
 		8350D0031CE4153A0087B1C5 = {
 			isa = PBXGroup;
 			children = (
+				83E26C1E1CE56BCC00C9FBED /* Alamofire.framework */,
 				8350D00E1CE4153A0087B1C5 /* ChinachuViewer */,
 				8350D0251CE4153A0087B1C5 /* ChinachuViewerTests */,
 				8350D0301CE4153A0087B1C5 /* ChinachuViewerUITests */,
@@ -106,6 +112,7 @@
 				8350D0181CE4153A0087B1C5 /* Assets.xcassets */,
 				8350D01A1CE4153A0087B1C5 /* LaunchScreen.storyboard */,
 				8350D01D1CE4153A0087B1C5 /* Info.plist */,
+				8377485B1CE95993007BC92F /* RecordedSession.swift */,
 			);
 			path = ChinachuViewer;
 			sourceTree = "<group>";
@@ -138,6 +145,7 @@
 				8350D0081CE4153A0087B1C5 /* Sources */,
 				8350D0091CE4153A0087B1C5 /* Frameworks */,
 				8350D00A1CE4153A0087B1C5 /* Resources */,
+				83E26C201CE56BE400C9FBED /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -254,11 +262,29 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		83E26C201CE56BE400C9FBED /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"$(SRCROOT)/Carthage/Build/iOS/Alamofire.framework",
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "/usr/local/bin/carthage copy-frameworks\n";
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		8350D0081CE4153A0087B1C5 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8377485C1CE95993007BC92F /* RecordedSession.swift in Sources */,
 				8350D0141CE4153A0087B1C5 /* ReservedViewController.swift in Sources */,
 				8350D0101CE4153A0087B1C5 /* AppDelegate.swift in Sources */,
 				8350D0121CE4153A0087B1C5 /* RecordedViewController.swift in Sources */,
@@ -405,6 +431,10 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = ChinachuViewer/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = tk.sobataro.ChinachuViewer;
@@ -416,6 +446,10 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = ChinachuViewer/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = tk.sobataro.ChinachuViewer;
