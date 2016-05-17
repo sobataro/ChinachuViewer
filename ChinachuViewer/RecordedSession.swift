@@ -8,20 +8,22 @@
 
 import Foundation
 import Alamofire
+import SwiftyJSON
 
 class RecordedSession {
-    class func fetchRecordedList(completionHandler: (json: AnyObject?, error: NSError?) -> Void) {
-        Alamofire.request(.GET, "https://httpbin.org/get", parameters: nil)
-            .validate()
-            .response { (request, response, data, error) in
-                if let error = error {
-                    completionHandler(json: nil, error: error)
-                    // FIXME: result をつかって swifty にする
-                }
+    class func fetchRecordedList(completionHandler: (json: JSON?, error: NSError?) -> Void) {
+        let url = "http://chinachu.sobataro.tk:10772/api/recorded.json"
 
-                // FIXME: swiftyjson とか mapper とか使う
-                let json = try! NSJSONSerialization.JSONObjectWithData(data!, options: [])
-                completionHandler(json: json, error: nil)
+        Alamofire.request(.GET, url).validate().responseJSON { response in
+            switch response.result {
+            case .Success:
+                if let value = response.result.value {
+                    let json = JSON(value)
+                    completionHandler(json: json, error: nil)
+                }
+            case .Failure(let error):
+                completionHandler(json: nil, error: error)
+            }
         }
     }
 }

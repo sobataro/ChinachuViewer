@@ -8,6 +8,7 @@
 
 import UIKit
 import Alamofire
+import SwiftyJSON
 
 class RecordedViewController: UIViewController {
 
@@ -15,30 +16,9 @@ class RecordedViewController: UIViewController {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
 
-        RecordedSession.fetchRecordedList({ (json: AnyObject?, error: NSError?) in
+        RecordedSession.fetchRecordedList({ (json: JSON?, error: NSError?) in
             print(json)
         })
-
-//        Alamofire.request(.GET, "http://chinachu.sobataro.tk:10772/api/recorded.json")
-//        .responseJSON { (response) in
-//            guard let json = response.result.value else {
-//                return
-//            }
-//            print(json)
-//        }
-
-        let urlSession = NSURLSession.sharedSession()
-        let url = NSURL(string: "http://chinachu.sobataro.tk:10772/api/recorded.json")!
-        let task = urlSession.dataTaskWithURL(url) { (data, response, error) in
-            guard let data = data else {
-                return
-            }
-            let json = try! NSJSONSerialization.JSONObjectWithData(data, options: [])
-            print(json)
-        }
-        task.resume()
-
-
     }
 
     override func didReceiveMemoryWarning() {
