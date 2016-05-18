@@ -7,7 +7,6 @@
 //
 
 import UIKit
-import Alamofire
 import SwiftyJSON
 
 class RecordedViewController: UIViewController {
@@ -16,7 +15,7 @@ class RecordedViewController: UIViewController {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
 
-        RecordedSession.fetchRecordedList({ (json: JSON?, error: NSError?) in
+        RecordedSession.fetchRecordedList( { (json: JSON?, error: NSError?) in
             print(json)
         })
     }
