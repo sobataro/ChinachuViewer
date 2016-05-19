@@ -18,27 +18,11 @@ class RecordedSession {
             switch response.result {
             case .Success:
                 if let value = response.result.value {
-                    let json = JSON(value)
-
-                    completionHandler(json: json, error: nil)
+                    completionHandler(json: JSON(value), nil)
                 }
             case .Failure(let error):
                 completionHandler(json: nil, error: error)
             }
         }
-
-//        Alamofire.request(.GET, url).validate().responseJSON { response in
-//            switch response.result {
-//            case .Success:
-//                print()
-//                if let value = response.result.value {
-//                    let json = JSON(value)
-//                    completionHandler(json: json, result: response.result)
-//                }
-//            case .Failure:
-//                print()
-//                completionHandler(json: nil, result: response.result)
-//            }
-//        }
     }
 }

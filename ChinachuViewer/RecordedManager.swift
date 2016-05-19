@@ -7,12 +7,21 @@
 //
 
 import Foundation
-import Alamofire // FIXME
 
 class RecordedManager {
-    func getRecordedList(completionHandler: (recordedList: [Recorded], result: Alamofire.Result) -> Void) {
+    static let apiClientErrorDomain = "apiClientErrorDomain"
+    static let jsonParseErrorCode = -100
+
+    static func getRecordedList(completionHandler: (recordedList: [Recorded]?, error: NSError) -> Void) {
         RecordedSession.fetchRecordedList { (json, result) in
-            print(json)
+            guard let json = json else {
+                completionHandler(recordedList: nil, error: NSError(domain: apiClientErrorDomain, code: jsonParseErrorCode, userInfo: nil))
+                return
+            }
+            let recordedList = json.map({ (json) -> Recorded in
+                Recorded.from(json.dictionaryObject!)!
+            })
+            completionHandler(json: recordedList, error: nil)
         }
     }
 }
