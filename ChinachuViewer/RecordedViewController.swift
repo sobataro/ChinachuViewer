@@ -11,7 +11,12 @@ import SwiftyJSON
 
 class RecordedViewController: UIViewController, UITableViewDataSource {
     @IBOutlet weak var tableView: UITableView!
-    
+
+    let recordedCellChannelTag  = 1
+    let recordedCellTitleTag    = 2
+    let recordedCellDateTimeTag = 3
+    let recordedCellDurationTag = 4
+
     var recordedList: [Recorded]? = nil
 
     override func viewDidLoad() {
@@ -36,13 +41,21 @@ class RecordedViewController: UIViewController, UITableViewDataSource {
     }
 
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+        // FIXME レイアウト崩れを直す
         let cell = tableView.dequeueReusableCellWithIdentifier("RecordedCell", forIndexPath: indexPath)
+        let channel  = cell.viewWithTag(recordedCellChannelTag)  as! UILabel
+        let title    = cell.viewWithTag(recordedCellTitleTag)    as! UILabel
+        let dateTime = cell.viewWithTag(recordedCellDateTimeTag) as! UILabel
+        let duration = cell.viewWithTag(recordedCellDurationTag) as! UILabel
 
         guard let recorded = recordedList?[indexPath.row] else {
             // FIXME
             return cell
         }
-        cell.textLabel?.text = recorded.fullTitle
+        channel.text  = recorded.channelName
+        title.text    = recorded.title
+        dateTime.text = "?/?" // FIXME
+        duration.text = (recorded.seconds / 60).description + "min"
 
         return cell
     }
