@@ -9,13 +9,8 @@
 import UIKit
 import SwiftyJSON
 
-class RecordedViewController: UIViewController, UITableViewDataSource {
+class RecordedViewController: UIViewController {
     @IBOutlet weak var tableView: UITableView!
-
-    let recordedCellChannelTag  = 1
-    let recordedCellTitleTag    = 2
-    let recordedCellDateTimeTag = 3
-    let recordedCellDurationTag = 4
 
     var recordedList: [Recorded]? = nil
 
@@ -39,14 +34,16 @@ class RecordedViewController: UIViewController, UITableViewDataSource {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+}
 
+extension RecordedViewController: UITableViewDataSource {
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         // FIXME レイアウト崩れを直す
         let cell = tableView.dequeueReusableCellWithIdentifier("RecordedCell", forIndexPath: indexPath)
-        let channel  = cell.viewWithTag(recordedCellChannelTag)  as! UILabel
-        let title    = cell.viewWithTag(recordedCellTitleTag)    as! UILabel
-        let dateTime = cell.viewWithTag(recordedCellDateTimeTag) as! UILabel
-        let duration = cell.viewWithTag(recordedCellDurationTag) as! UILabel
+        let channel  = cell.viewWithTag(1) as! UILabel
+        let title    = cell.viewWithTag(2) as! UILabel
+        let dateTime = cell.viewWithTag(3) as! UILabel
+        let duration = cell.viewWithTag(4) as! UILabel
 
         guard let recorded = recordedList?[indexPath.row] else {
             // FIXME
@@ -62,5 +59,16 @@ class RecordedViewController: UIViewController, UITableViewDataSource {
 
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return recordedList?.count ?? 0
+    }
+}
+
+extension RecordedViewController: UITableViewDelegate {
+    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+//        let recordedDetailViewController = RecordedDetailViewController()
+//        presentViewController(recordedDetailViewController, animated: true, completion: nil)
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        let recordedDetailViewController = storyboard.instantiateViewControllerWithIdentifier("RecordedDetail")
+        presentViewController(recordedDetailViewController, animated: true, completion: nil) // FIXME doesn't work!
+//        UIStoryboard.instantiateViewControllerWithIdentifier(
     }
 }
