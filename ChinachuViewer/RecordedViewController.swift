@@ -12,12 +12,15 @@ import SwiftyJSON
 class RecordedViewController: UIViewController {
     @IBOutlet weak var tableView: UITableView!
 
+    let dateFormatter = NSDateFormatter()
     var recordedList: [Recorded]? = nil
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
         tableView.dataSource = self
+
+        dateFormatter.dateFormat = "yyyy-MM-dd\nHH:mm"
     }
 
     override func viewWillAppear(animated: Bool) {
@@ -38,21 +41,23 @@ class RecordedViewController: UIViewController {
 
 extension RecordedViewController: UITableViewDataSource {
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        // FIXME レイアウト崩れを直す
         let cell = tableView.dequeueReusableCellWithIdentifier("RecordedCell", forIndexPath: indexPath)
-        let channel  = cell.viewWithTag(1) as! UILabel
-        let title    = cell.viewWithTag(2) as! UILabel
-        let dateTime = cell.viewWithTag(3) as! UILabel
-        let duration = cell.viewWithTag(4) as! UILabel
-
         guard let recorded = recordedList?[indexPath.row] else {
             // FIXME
             return cell
         }
-        channel.text  = recorded.channelName.hankakuOnlyNumberAlphabet //.stringByReplacingOccurrencesOfString("BS", withString: "BS\n")
-        title.text    = recorded.title.hankakuOnlyNumberAlphabet
-        dateTime.text = "?/?" // FIXME
-        duration.text = (recorded.seconds / 60).description + "min"
+
+        let channel          = cell.viewWithTag(1) as! UILabel
+        let title            = cell.viewWithTag(2) as! UILabel
+        let dateTimeDuration = cell.viewWithTag(3) as! UILabel
+
+        channel.text = recorded.channelName.hankakuOnlyNumberAlphabet
+        title.text   = recorded.title.hankakuOnlyNumberAlphabet
+
+        let startDate = NSDate(timeIntervalSince1970: NSTimeInterval(recorded.start / 1000))
+        let startDateString = dateFormatter.stringFromDate(startDate)
+        let durationText    = (recorded.seconds / 60).description + "min"
+        dateTimeDuration.text = startDateString + "\n" + durationText
 
         return cell
     }
