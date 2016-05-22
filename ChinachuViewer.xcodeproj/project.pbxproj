@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		8327F13A1CF1F21700424B94 /* String+HankakuZenkakuConverter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8327F1391CF1F21700424B94 /* String+HankakuZenkakuConverter.swift */; };
 		8350D0101CE4153A0087B1C5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8350D00F1CE4153A0087B1C5 /* AppDelegate.swift */; };
 		8350D0121CE4153A0087B1C5 /* RecordedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8350D0111CE4153A0087B1C5 /* RecordedViewController.swift */; };
 		8350D0141CE4153A0087B1C5 /* ReservedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8350D0131CE4153A0087B1C5 /* ReservedViewController.swift */; };
@@ -40,6 +41,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		8327F1391CF1F21700424B94 /* String+HankakuZenkakuConverter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "String+HankakuZenkakuConverter.swift"; path = "Utils/String+HankakuZenkakuConverter.swift"; sourceTree = "<group>"; };
 		8350D00C1CE4153A0087B1C5 /* ChinachuViewer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ChinachuViewer.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8350D00F1CE4153A0087B1C5 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		8350D0111CE4153A0087B1C5 /* RecordedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordedViewController.swift; sourceTree = "<group>"; };
@@ -87,6 +89,32 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		8327F1361CF1F1A900424B94 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				8350D0111CE4153A0087B1C5 /* RecordedViewController.swift */,
+				8350D0131CE4153A0087B1C5 /* ReservedViewController.swift */,
+				837F8E511CEEA56B00548472 /* RecordedDetailViewController.swift */,
+			);
+			name = ViewControllers;
+			sourceTree = "<group>";
+		};
+		8327F1371CF1F1B400424B94 /* Entities */ = {
+			isa = PBXGroup;
+			children = (
+				83A04B9F1CE9E15700C79BE7 /* Recorded.swift */,
+			);
+			name = Entities;
+			sourceTree = "<group>";
+		};
+		8327F1381CF1F1EF00424B94 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				8327F1391CF1F21700424B94 /* String+HankakuZenkakuConverter.swift */,
+			);
+			name = Utils;
+			sourceTree = "<group>";
+		};
 		8350D0031CE4153A0087B1C5 = {
 			isa = PBXGroup;
 			children = (
@@ -111,17 +139,16 @@
 		8350D00E1CE4153A0087B1C5 /* ChinachuViewer */ = {
 			isa = PBXGroup;
 			children = (
+				8327F1381CF1F1EF00424B94 /* Utils */,
 				8350D00F1CE4153A0087B1C5 /* AppDelegate.swift */,
-				8350D0111CE4153A0087B1C5 /* RecordedViewController.swift */,
-				8350D0131CE4153A0087B1C5 /* ReservedViewController.swift */,
-				8350D0151CE4153A0087B1C5 /* Main.storyboard */,
 				8350D0181CE4153A0087B1C5 /* Assets.xcassets */,
-				8350D01A1CE4153A0087B1C5 /* LaunchScreen.storyboard */,
+				8327F1371CF1F1B400424B94 /* Entities */,
 				8350D01D1CE4153A0087B1C5 /* Info.plist */,
-				8377485B1CE95993007BC92F /* RecordedSession.swift */,
-				83A04B9F1CE9E15700C79BE7 /* Recorded.swift */,
+				8350D01A1CE4153A0087B1C5 /* LaunchScreen.storyboard */,
+				8350D0151CE4153A0087B1C5 /* Main.storyboard */,
 				83B703DF1CEBFA800015FE41 /* RecordedManager.swift */,
-				837F8E511CEEA56B00548472 /* RecordedDetailViewController.swift */,
+				8377485B1CE95993007BC92F /* RecordedSession.swift */,
+				8327F1361CF1F1A900424B94 /* ViewControllers */,
 			);
 			path = ChinachuViewer;
 			sourceTree = "<group>";
@@ -300,6 +327,7 @@
 				8350D0141CE4153A0087B1C5 /* ReservedViewController.swift in Sources */,
 				8350D0101CE4153A0087B1C5 /* AppDelegate.swift in Sources */,
 				837F8E521CEEA56B00548472 /* RecordedDetailViewController.swift in Sources */,
+				8327F13A1CF1F21700424B94 /* String+HankakuZenkakuConverter.swift in Sources */,
 				8350D0121CE4153A0087B1C5 /* RecordedViewController.swift in Sources */,
 				83B703E01CEBFA800015FE41 /* RecordedManager.swift in Sources */,
 			);

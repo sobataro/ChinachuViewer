@@ -49,8 +49,8 @@ extension RecordedViewController: UITableViewDataSource {
             // FIXME
             return cell
         }
-        channel.text  = recorded.channelName
-        title.text    = recorded.title
+        channel.text  = recorded.channelName.hankakuOnlyNumberAlphabet //.stringByReplacingOccurrencesOfString("BS", withString: "BS\n")
+        title.text    = recorded.title.hankakuOnlyNumberAlphabet
         dateTime.text = "?/?" // FIXME
         duration.text = (recorded.seconds / 60).description + "min"
 

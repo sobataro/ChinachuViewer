@@ -34,6 +34,5 @@ struct Recorded: Mappable {
         try start       = map.from("start")
         try end         = map.from("end")
         try seconds     = map.from("seconds")
-//        photoURL = map.optionalFrom("avatar_url")
     }
 }
