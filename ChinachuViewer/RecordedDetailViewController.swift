@@ -10,9 +10,21 @@ import Foundation
 import UIKit
 
 class RecordedDetailViewController: UIViewController {
+    @IBOutlet weak var fullTitleLabel: UILabel!
+    @IBOutlet weak var channelLabel: UILabel!
+    @IBOutlet weak var dateTimeDurationLabel: UILabel!
+    @IBOutlet weak var detailLabel: UILabel!
+
+    var recorded: Recorded?
+
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
+
+        fullTitleLabel.text        = recorded!.fullTitle
+        channelLabel.text          = recorded!.channelName.hankakuOnlyNumberAlphabet
+        dateTimeDurationLabel.text = recorded!.dateTimeDuration
+        detailLabel.text           = recorded!.detail.hankakuOnlyNumberAlphabet
     }
 
     override func didReceiveMemoryWarning() {

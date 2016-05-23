@@ -12,15 +12,14 @@ import SwiftyJSON
 class RecordedViewController: UIViewController {
     @IBOutlet weak var tableView: UITableView!
 
-    let dateFormatter = NSDateFormatter()
     var recordedList: [Recorded]? = nil
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
         tableView.dataSource = self
+        tableView.delegate = self
 
-        dateFormatter.dateFormat = "yyyy-MM-dd\nHH:mm"
     }
 
     override func viewWillAppear(animated: Bool) {
@@ -53,11 +52,7 @@ extension RecordedViewController: UITableViewDataSource {
 
         channel.text = recorded.channelName.hankakuOnlyNumberAlphabet
         title.text   = recorded.title.hankakuOnlyNumberAlphabet
-
-        let startDate = NSDate(timeIntervalSince1970: NSTimeInterval(recorded.start / 1000))
-        let startDateString = dateFormatter.stringFromDate(startDate)
-        let durationText    = (recorded.seconds / 60).description + "min"
-        dateTimeDuration.text = startDateString + "\n" + durationText
+        dateTimeDuration.text = recorded.dateTimeDuration
 
         return cell
     }
@@ -69,11 +64,20 @@ extension RecordedViewController: UITableViewDataSource {
 
 extension RecordedViewController: UITableViewDelegate {
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-//        let recordedDetailViewController = RecordedDetailViewController()
-//        presentViewController(recordedDetailViewController, animated: true, completion: nil)
+        guard let recorded = recordedList?[indexPath.row] else {
+            return
+        }
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
-        let recordedDetailViewController = storyboard.instantiateViewControllerWithIdentifier("RecordedDetail")
-        presentViewController(recordedDetailViewController, animated: true, completion: nil) // FIXME doesn't work!
-//        UIStoryboard.instantiateViewControllerWithIdentifier(
+        let recordedDetailViewController = storyboard.instantiateViewControllerWithIdentifier("RecordedDetail") as! RecordedDetailViewController
+        recordedDetailViewController.recorded = recorded
+
+        self.navigationController?.pushViewController(recordedDetailViewController, animated: true)
+
+//        presentViewController(recordedDetailViewController, animated: true, completion: nil)
+
+        // FIXME
+        //                 self?.navigationController?.pushViewController(viewController, animated: true)
+        // 的なことをする
+
     }
 }

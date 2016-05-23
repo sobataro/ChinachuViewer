@@ -12,8 +12,8 @@ import SwiftyJSON
 
 class RecordedSession {
     class func fetchRecordedList(completionHandler: (json: JSON?, error: NSError?) -> Void) {
-        let url = "http://chinachu.sobataro.tk:10772/api/recorded.json"
-
+//        let url = "http://chinachu.sobataro.tk:10772/api/recorded.json"
+        let url = "http://localhost:10772/api/recorded.json"
 
         Alamofire.request(.GET, url).validate().responseJSON { response in
             // FIXME ここはメインスレッドで実行される
