@@ -9,17 +9,17 @@
 /* Begin PBXBuildFile section */
 		8327F13A1CF1F21700424B94 /* String+HankakuZenkakuConverter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8327F1391CF1F21700424B94 /* String+HankakuZenkakuConverter.swift */; };
 		8350D0101CE4153A0087B1C5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8350D00F1CE4153A0087B1C5 /* AppDelegate.swift */; };
-		8350D0121CE4153A0087B1C5 /* RecordedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8350D0111CE4153A0087B1C5 /* RecordedViewController.swift */; };
-		8350D0141CE4153A0087B1C5 /* ReservedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8350D0131CE4153A0087B1C5 /* ReservedViewController.swift */; };
 		8350D0171CE4153A0087B1C5 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8350D0151CE4153A0087B1C5 /* Main.storyboard */; };
 		8350D0191CE4153A0087B1C5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8350D0181CE4153A0087B1C5 /* Assets.xcassets */; };
 		8350D01C1CE4153A0087B1C5 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8350D01A1CE4153A0087B1C5 /* LaunchScreen.storyboard */; };
 		8350D0271CE4153A0087B1C5 /* ChinachuViewerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8350D0261CE4153A0087B1C5 /* ChinachuViewerTests.swift */; };
 		8350D0321CE4153A0087B1C5 /* ChinachuViewerUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8350D0311CE4153A0087B1C5 /* ChinachuViewerUITests.swift */; };
-		837F8E521CEEA56B00548472 /* RecordedDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 837F8E511CEEA56B00548472 /* RecordedDetailViewController.swift */; };
-		83A04BA01CE9E15700C79BE7 /* Recorded.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83A04B9F1CE9E15700C79BE7 /* Recorded.swift */; };
 		83D8C27C1CF5351900429105 /* RecordedClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83D8C27B1CF5351800429105 /* RecordedClient.swift */; };
 		83D8C2801CF53A8F00429105 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83D8C27F1CF53A8F00429105 /* Constants.swift */; };
+		83D8C2841CF53AC600429105 /* RecordedDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83D8C2811CF53AC600429105 /* RecordedDetailViewController.swift */; };
+		83D8C2851CF53AC600429105 /* RecordedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83D8C2821CF53AC600429105 /* RecordedViewController.swift */; };
+		83D8C2861CF53AC600429105 /* ReservedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83D8C2831CF53AC600429105 /* ReservedViewController.swift */; };
+		83D8C2881CF53AEB00429105 /* Recorded.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83D8C2871CF53AEB00429105 /* Recorded.swift */; };
 		83E26C1F1CE56BCC00C9FBED /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 83E26C1E1CE56BCC00C9FBED /* Alamofire.framework */; };
 /* End PBXBuildFile section */
 
@@ -44,8 +44,6 @@
 		8327F1391CF1F21700424B94 /* String+HankakuZenkakuConverter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "String+HankakuZenkakuConverter.swift"; path = "Utils/String+HankakuZenkakuConverter.swift"; sourceTree = "<group>"; };
 		8350D00C1CE4153A0087B1C5 /* ChinachuViewer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ChinachuViewer.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8350D00F1CE4153A0087B1C5 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		8350D0111CE4153A0087B1C5 /* RecordedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordedViewController.swift; sourceTree = "<group>"; };
-		8350D0131CE4153A0087B1C5 /* ReservedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReservedViewController.swift; sourceTree = "<group>"; };
 		8350D0161CE4153A0087B1C5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		8350D0181CE4153A0087B1C5 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		8350D01B1CE4153A0087B1C5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -56,10 +54,12 @@
 		8350D02D1CE4153A0087B1C5 /* ChinachuViewerUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ChinachuViewerUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		8350D0311CE4153A0087B1C5 /* ChinachuViewerUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChinachuViewerUITests.swift; sourceTree = "<group>"; };
 		8350D0331CE4153A0087B1C5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		837F8E511CEEA56B00548472 /* RecordedDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecordedDetailViewController.swift; sourceTree = "<group>"; };
-		83A04B9F1CE9E15700C79BE7 /* Recorded.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Recorded.swift; sourceTree = "<group>"; };
 		83D8C27B1CF5351800429105 /* RecordedClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecordedClient.swift; sourceTree = "<group>"; };
 		83D8C27F1CF53A8F00429105 /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		83D8C2811CF53AC600429105 /* RecordedDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RecordedDetailViewController.swift; path = ViewControllers/RecordedDetailViewController.swift; sourceTree = "<group>"; };
+		83D8C2821CF53AC600429105 /* RecordedViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RecordedViewController.swift; path = ViewControllers/RecordedViewController.swift; sourceTree = "<group>"; };
+		83D8C2831CF53AC600429105 /* ReservedViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ReservedViewController.swift; path = ViewControllers/ReservedViewController.swift; sourceTree = "<group>"; };
+		83D8C2871CF53AEB00429105 /* Recorded.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Recorded.swift; path = Entities/Recorded.swift; sourceTree = "<group>"; };
 		83E26C1E1CE56BCC00C9FBED /* Alamofire.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Alamofire.framework; path = Carthage/Build/iOS/Alamofire.framework; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -92,9 +92,9 @@
 		8327F1361CF1F1A900424B94 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
-				8350D0111CE4153A0087B1C5 /* RecordedViewController.swift */,
-				8350D0131CE4153A0087B1C5 /* ReservedViewController.swift */,
-				837F8E511CEEA56B00548472 /* RecordedDetailViewController.swift */,
+				83D8C2811CF53AC600429105 /* RecordedDetailViewController.swift */,
+				83D8C2821CF53AC600429105 /* RecordedViewController.swift */,
+				83D8C2831CF53AC600429105 /* ReservedViewController.swift */,
 			);
 			name = ViewControllers;
 			sourceTree = "<group>";
@@ -102,7 +102,7 @@
 		8327F1371CF1F1B400424B94 /* Entities */ = {
 			isa = PBXGroup;
 			children = (
-				83A04B9F1CE9E15700C79BE7 /* Recorded.swift */,
+				83D8C2871CF53AEB00429105 /* Recorded.swift */,
 			);
 			name = Entities;
 			sourceTree = "<group>";
@@ -330,13 +330,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				83A04BA01CE9E15700C79BE7 /* Recorded.swift in Sources */,
-				8350D0141CE4153A0087B1C5 /* ReservedViewController.swift in Sources */,
+				83D8C2851CF53AC600429105 /* RecordedViewController.swift in Sources */,
+				83D8C2881CF53AEB00429105 /* Recorded.swift in Sources */,
 				8350D0101CE4153A0087B1C5 /* AppDelegate.swift in Sources */,
-				837F8E521CEEA56B00548472 /* RecordedDetailViewController.swift in Sources */,
 				8327F13A1CF1F21700424B94 /* String+HankakuZenkakuConverter.swift in Sources */,
-				8350D0121CE4153A0087B1C5 /* RecordedViewController.swift in Sources */,
+				83D8C2841CF53AC600429105 /* RecordedDetailViewController.swift in Sources */,
 				83D8C27C1CF5351900429105 /* RecordedClient.swift in Sources */,
+				83D8C2861CF53AC600429105 /* ReservedViewController.swift in Sources */,
 				83D8C2801CF53A8F00429105 /* Constants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
