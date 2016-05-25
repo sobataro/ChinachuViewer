@@ -25,7 +25,7 @@ class RecordedViewController: UIViewController {
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
 
-        RecordedManager.getRecordedList { (recordedList, error) in
+        RecordedClient.fetchRecordedList { (recordedList, error) in
             self.recordedList = recordedList
             print(recordedList)
             self.tableView.reloadData()
@@ -72,12 +72,6 @@ extension RecordedViewController: UITableViewDelegate {
         recordedDetailViewController.recorded = recorded
 
         self.navigationController?.pushViewController(recordedDetailViewController, animated: true)
-
-//        presentViewController(recordedDetailViewController, animated: true, completion: nil)
-
-        // FIXME
-        //                 self?.navigationController?.pushViewController(viewController, animated: true)
-        // 的なことをする
-
+        // FIXME navigationController のデザインとか
     }
 }
