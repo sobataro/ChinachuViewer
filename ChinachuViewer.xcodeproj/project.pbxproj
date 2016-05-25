@@ -20,6 +20,7 @@
 		83D8C2851CF53AC600429105 /* RecordedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83D8C2821CF53AC600429105 /* RecordedViewController.swift */; };
 		83D8C2861CF53AC600429105 /* ReservedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83D8C2831CF53AC600429105 /* ReservedViewController.swift */; };
 		83D8C2881CF53AEB00429105 /* Recorded.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83D8C2871CF53AEB00429105 /* Recorded.swift */; };
+		83D8C28A1CF53F4000429105 /* GCD.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83D8C2891CF53F4000429105 /* GCD.swift */; };
 		83E26C1F1CE56BCC00C9FBED /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 83E26C1E1CE56BCC00C9FBED /* Alamofire.framework */; };
 /* End PBXBuildFile section */
 
@@ -60,6 +61,7 @@
 		83D8C2821CF53AC600429105 /* RecordedViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RecordedViewController.swift; path = ViewControllers/RecordedViewController.swift; sourceTree = "<group>"; };
 		83D8C2831CF53AC600429105 /* ReservedViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ReservedViewController.swift; path = ViewControllers/ReservedViewController.swift; sourceTree = "<group>"; };
 		83D8C2871CF53AEB00429105 /* Recorded.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Recorded.swift; path = Entities/Recorded.swift; sourceTree = "<group>"; };
+		83D8C2891CF53F4000429105 /* GCD.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GCD.swift; sourceTree = "<group>"; };
 		83E26C1E1CE56BCC00C9FBED /* Alamofire.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Alamofire.framework; path = Carthage/Build/iOS/Alamofire.framework; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -111,6 +113,7 @@
 			isa = PBXGroup;
 			children = (
 				8327F1391CF1F21700424B94 /* String+HankakuZenkakuConverter.swift */,
+				83D8C2891CF53F4000429105 /* GCD.swift */,
 			);
 			name = Utils;
 			sourceTree = "<group>";
@@ -336,6 +339,7 @@
 				8327F13A1CF1F21700424B94 /* String+HankakuZenkakuConverter.swift in Sources */,
 				83D8C2841CF53AC600429105 /* RecordedDetailViewController.swift in Sources */,
 				83D8C27C1CF5351900429105 /* RecordedClient.swift in Sources */,
+				83D8C28A1CF53F4000429105 /* GCD.swift in Sources */,
 				83D8C2861CF53AC600429105 /* ReservedViewController.swift in Sources */,
 				83D8C2801CF53A8F00429105 /* Constants.swift in Sources */,
 			);
