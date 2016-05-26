@@ -50,9 +50,9 @@ extension RecordedViewController: UITableViewDataSource {
         let title            = cell.viewWithTag(2) as! UILabel
         let dateTimeDuration = cell.viewWithTag(3) as! UILabel
 
-        channel.text = recorded.channelName.hankakuOnlyNumberAlphabet
-        title.text   = recorded.title.hankakuOnlyNumberAlphabet
-        dateTimeDuration.text = recorded.dateTimeDuration
+        channel.text          = recorded.program.channelName.hankakuOnlyNumberAlphabet
+        title.text            = recorded.program.title.hankakuOnlyNumberAlphabet
+        dateTimeDuration.text = recorded.program.dateTimeDuration
 
         return cell
     }

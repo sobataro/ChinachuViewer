@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		830744ED1CF6880F00CA46BE /* Program.swift in Sources */ = {isa = PBXBuildFile; fileRef = 830744EC1CF6880F00CA46BE /* Program.swift */; };
 		8327F13A1CF1F21700424B94 /* String+HankakuZenkakuConverter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8327F1391CF1F21700424B94 /* String+HankakuZenkakuConverter.swift */; };
 		8350D0101CE4153A0087B1C5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8350D00F1CE4153A0087B1C5 /* AppDelegate.swift */; };
 		8350D0171CE4153A0087B1C5 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8350D0151CE4153A0087B1C5 /* Main.storyboard */; };
@@ -42,6 +43,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		830744EC1CF6880F00CA46BE /* Program.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Program.swift; path = Entities/Program.swift; sourceTree = "<group>"; };
 		8327F1391CF1F21700424B94 /* String+HankakuZenkakuConverter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "String+HankakuZenkakuConverter.swift"; path = "Utils/String+HankakuZenkakuConverter.swift"; sourceTree = "<group>"; };
 		8350D00C1CE4153A0087B1C5 /* ChinachuViewer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ChinachuViewer.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8350D00F1CE4153A0087B1C5 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -105,6 +107,7 @@
 			isa = PBXGroup;
 			children = (
 				83D8C2871CF53AEB00429105 /* Recorded.swift */,
+				830744EC1CF6880F00CA46BE /* Program.swift */,
 			);
 			name = Entities;
 			sourceTree = "<group>";
@@ -333,6 +336,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				830744ED1CF6880F00CA46BE /* Program.swift in Sources */,
 				83D8C2851CF53AC600429105 /* RecordedViewController.swift in Sources */,
 				83D8C2881CF53AEB00429105 /* Recorded.swift in Sources */,
 				8350D0101CE4153A0087B1C5 /* AppDelegate.swift in Sources */,

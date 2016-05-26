@@ -21,10 +21,10 @@ class RecordedDetailViewController: UIViewController {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
 
-        fullTitleLabel.text        = recorded!.fullTitle
-        channelLabel.text          = recorded!.channelName.hankakuOnlyNumberAlphabet
-        dateTimeDurationLabel.text = recorded!.dateTimeDuration
-        detailLabel.text           = recorded!.detail.hankakuOnlyNumberAlphabet
+        fullTitleLabel.text        = recorded!.program.fullTitle
+        channelLabel.text          = recorded!.program.channelName.hankakuOnlyNumberAlphabet
+        dateTimeDurationLabel.text = recorded!.program.dateTimeDuration
+        detailLabel.text           = recorded!.program.detail.hankakuOnlyNumberAlphabet
     }
 
     override func didReceiveMemoryWarning() {
