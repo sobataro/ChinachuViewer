@@ -9,15 +9,19 @@
 import Foundation
 import Alamofire
 import SwiftyJSON
+import Async
 
 //
 // An API client class for `/recorded` resource
 //
 class RecordedClient {
-    static let apiClientErrorDomain = "apiClientErrorDomain"
-    static let jsonParseErrorCode = -100
+    enum APIError: ErrorType {
+        case NetworkError
+        case JSONParseError
+    }
 
-    static func fetchRecordedList(completionHandler: (recordedList: [Recorded]?, error: NSError?) -> Void) {
+//    static func fetchRecordedList(completionHandler: (recordedList: [Recorded]?, error: NSError?) -> Void) {
+    static func fetchRecordedList(completionHandler: (Result<[Recorded], APIError>) -> Void) {
         let url = Constants().apiBaseUrl + "/recorded.json"
 
         Alamofire.request(.GET, url)
@@ -26,14 +30,14 @@ class RecordedClient {
             switch response.result {
             case .Success:
                 guard let value = response.result.value else {
-                    GCD.dispatch_async_main {
-                        completionHandler(recordedList: nil, error: NSError(domain: apiClientErrorDomain, code: jsonParseErrorCode, userInfo: nil))
+                    Async.main {
+                        completionHandler(.Failure(.JSONParseError))
                     }
                     return
                 }
                 guard let json = JSON(value).array else {
-                    GCD.dispatch_async_main {
-                        completionHandler(recordedList: nil, error: NSError(domain: apiClientErrorDomain, code: jsonParseErrorCode, userInfo: nil))
+                    Async.main {
+                        completionHandler(.Failure(.JSONParseError))
                     }
                     return
                 }
@@ -41,12 +45,12 @@ class RecordedClient {
                 let recordedList = json.map { (json) -> Recorded in
                     Recorded.from(json.dictionaryObject!)!
                 }
-                GCD.dispatch_async_main {
-                    completionHandler(recordedList: recordedList, error: nil)
+                Async.main {
+                    completionHandler(.Success(recordedList))
                 }
             case .Failure(let error):
-                GCD.dispatch_async_main {
-                    completionHandler(recordedList: nil, error: error)
+                Async.main {
+                    completionHandler(.Failure(.NetworkError))
                 }
             }
         })

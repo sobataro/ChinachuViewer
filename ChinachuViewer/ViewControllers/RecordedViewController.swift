@@ -8,6 +8,7 @@
 
 import UIKit
 import SwiftyJSON
+import Result
 
 class RecordedViewController: UIViewController {
     @IBOutlet weak var tableView: UITableView!
@@ -25,10 +26,18 @@ class RecordedViewController: UIViewController {
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
 
-        RecordedClient.fetchRecordedList { (recordedList, error) in
-            self.recordedList = recordedList
-            print(recordedList)
-            self.tableView.reloadData()
+        RecordedClient.fetchRecordedList { result in
+            switch result {
+            case .Success:
+                self.recordedList = result.value
+                print(self.recordedList)
+                self.tableView.reloadData()
+
+                // TODO recordedList が nil または .count==0 の場合にエラー表示する
+            case .Failure:
+                // TODO なんかエラー表示する
+                print(result.error)
+            }
         }
     }
 
