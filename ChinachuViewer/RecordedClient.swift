@@ -48,7 +48,7 @@ class RecordedClient {
                 Async.main {
                     completionHandler(.Success(recordedList))
                 }
-            case .Failure(let error):
+            case .Failure:
                 Async.main {
                     completionHandler(.Failure(.NetworkError))
                 }

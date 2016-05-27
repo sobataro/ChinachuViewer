@@ -12,6 +12,8 @@
 		8307452F1CF7D2AB00CA46BE /* Async.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8307452E1CF7D2AB00CA46BE /* Async.framework */; };
 		830745321CF7D3C200CA46BE /* Mapper.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 830745301CF7D3C200CA46BE /* Mapper.framework */; };
 		830745331CF7D3C200CA46BE /* SwiftyJSON.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 830745311CF7D3C200CA46BE /* SwiftyJSON.framework */; };
+		8307453C1CF7DB1000CA46BE /* ProgramTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8307453A1CF7DB1000CA46BE /* ProgramTest.swift */; };
+		830745401CF7DF6200CA46BE /* ProgramTest.json in Resources */ = {isa = PBXBuildFile; fileRef = 8307453F1CF7DF6200CA46BE /* ProgramTest.json */; };
 		8327F13A1CF1F21700424B94 /* String+HankakuZenkakuConverter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8327F1391CF1F21700424B94 /* String+HankakuZenkakuConverter.swift */; };
 		8350D0101CE4153A0087B1C5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8350D00F1CE4153A0087B1C5 /* AppDelegate.swift */; };
 		8350D0171CE4153A0087B1C5 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8350D0151CE4153A0087B1C5 /* Main.storyboard */; };
@@ -52,6 +54,8 @@
 		8307452E1CF7D2AB00CA46BE /* Async.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Async.framework; path = Carthage/Build/iOS/Async.framework; sourceTree = "<group>"; };
 		830745301CF7D3C200CA46BE /* Mapper.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Mapper.framework; path = Carthage/Build/iOS/Mapper.framework; sourceTree = "<group>"; };
 		830745311CF7D3C200CA46BE /* SwiftyJSON.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftyJSON.framework; path = Carthage/Build/iOS/SwiftyJSON.framework; sourceTree = "<group>"; };
+		8307453A1CF7DB1000CA46BE /* ProgramTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ProgramTest.swift; path = Entities/ProgramTest.swift; sourceTree = "<group>"; };
+		8307453F1CF7DF6200CA46BE /* ProgramTest.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = ProgramTest.json; path = Entities/ProgramTest.json; sourceTree = "<group>"; };
 		8327F1391CF1F21700424B94 /* String+HankakuZenkakuConverter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "String+HankakuZenkakuConverter.swift"; path = "Utils/String+HankakuZenkakuConverter.swift"; sourceTree = "<group>"; };
 		8350D00C1CE4153A0087B1C5 /* ChinachuViewer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ChinachuViewer.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8350D00F1CE4153A0087B1C5 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -105,6 +109,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		830745341CF7DA5400CA46BE /* Entities */ = {
+			isa = PBXGroup;
+			children = (
+				8307453A1CF7DB1000CA46BE /* ProgramTest.swift */,
+				8307453F1CF7DF6200CA46BE /* ProgramTest.json */,
+			);
+			name = Entities;
+			sourceTree = "<group>";
+		};
 		8327F1361CF1F1A900424B94 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
@@ -178,6 +191,7 @@
 		8350D0251CE4153A0087B1C5 /* ChinachuViewerTests */ = {
 			isa = PBXGroup;
 			children = (
+				830745341CF7DA5400CA46BE /* Entities */,
 				8350D0261CE4153A0087B1C5 /* ChinachuViewerTests.swift */,
 				8350D0281CE4153A0087B1C5 /* Info.plist */,
 			);
@@ -316,6 +330,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				830745401CF7DF6200CA46BE /* ProgramTest.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -371,6 +386,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8307453C1CF7DB1000CA46BE /* ProgramTest.swift in Sources */,
 				8350D0271CE4153A0087B1C5 /* ChinachuViewerTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -1,0 +1,39 @@
+ [
+  {
+  "id":"bs151-ess",
+  "channel":{
+  "n":12,
+  "type":"BS",
+  "channel":"151",
+  "name":"ＢＳ朝日１",
+  "id":"BS_151",
+  "sid":"151"
+  },
+  "category":"etc",
+  "title":"地球紀行　「BBCスペシャル フランスの大自然 動物たちの物語」",
+  "subTitle":"BBCスペシャル フランスの大自然 動物たちの物語",
+  "fullTitle":"【二】地球紀行　「BBCスペシャル フランスの大自然 動物たちの物語」",
+  "detail":"「アルプス・世界遺産の城 そしてプロバンスへ」▽美しくも雄大な自然に恵まれたフランス。アルプスの山々や世界遺産の城など雄大な自然の中で暮らす野生動物たちに密着！",
+  "episode":null,
+  "start":1450518840000,
+  "end":1450526040000,
+  "seconds":7200,
+  "flags":[
+           "二"
+           ],
+  "isConflict":false,
+  "isSigTerm":true,
+  "tuner":{
+  "name":"PT3-S2",
+  "isScrambling":false,
+  "types":[
+           "BS",
+           "CS"
+           ],
+  "command":"recpt1 --device /dev/pt3video1 --b25 --strip --sid <sid> <channel> - -",
+  "n":1
+  },
+  "recorded":"/tank/record/[151219-1854][BS151][PT3-S2]地球紀行　「BBCスペシャル フランスの大自然 動物たちの物語」.m2ts",
+  "command":"recpt1 --device /dev/pt3video1 --b25 --strip --sid 151 151 - -"
+  }
+]
