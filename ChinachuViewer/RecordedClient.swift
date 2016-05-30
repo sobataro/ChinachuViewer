@@ -15,6 +15,8 @@ import Async
 // An API client class for `/recorded` resource
 //
 class RecordedClient {
+    static let path = "/recorded.json"
+
     enum APIError: ErrorType {
         case NetworkError
         case JSONParseError
@@ -22,7 +24,7 @@ class RecordedClient {
 
 //    static func fetchRecordedList(completionHandler: (recordedList: [Recorded]?, error: NSError?) -> Void) {
     static func fetchRecordedList(completionHandler: (Result<[Recorded], APIError>) -> Void) {
-        let url = Constants().apiBaseUrl + "/recorded.json"
+        let url = Constants.apiBaseUrl + path
 
         Alamofire.request(.GET, url)
             .validate()

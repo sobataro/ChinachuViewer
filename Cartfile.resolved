@@ -1,5 +1,6 @@
 github "Alamofire/Alamofire" "3.4.0"
 github "duemunk/Async" "1.7.2"
+github "kylef/Mockingjay" "1.2.2"
 github "antitypical/Result" "2.0.0"
 github "SwiftyJSON/SwiftyJSON" "2.3.3"
 github "lyft/mapper" "2.1.0"

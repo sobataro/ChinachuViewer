@@ -7,5 +7,5 @@
 //
 
 final class Constants {
-    let apiBaseUrl = "http://localhost:10772/api"
+    static let apiBaseUrl = "http://localhost:10772/api"
 }
