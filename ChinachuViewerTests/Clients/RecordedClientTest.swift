@@ -8,18 +8,16 @@
 
 import Foundation
 import XCTest
-import Mockingjay
+import OHHTTPStubs
 @testable import ChinachuViewer
 
 class RecordedClientTests: XCTestCase {
-    var data: NSData? = nil
-
     override func setUp() {
         super.setUp()
         // Put setup code here. This method is called before the invocation of each test method in the class.
 
 
-        guard let path = NSBundle(forClass: RecordedClientTests.self).pathForResource("ProgramTest", ofType: "json") else {
+        guard let path = NSBundle(forClass: RecordedClientTests.self).pathForResource("RecordedClientTest", ofType: "json") else {
             XCTFail("Can't read the json file for test")
             return
         }
@@ -37,13 +35,11 @@ class RecordedClientTests: XCTestCase {
     }
 
     func testRecordedEntity() {
-        guard let data = self.data else {
-            XCTFail()
-            return
-        }
-
         let expectation = expectationWithDescription("download recorded.json and parse it")
-        stub(http(.GET, uri: Constants.apiBaseUrl + RecordedClient.path), builder: jsonData(data))
+        stub(isHost(Constants.apiHost)) { request in
+            let path = OHPathForFileInBundle("RecordedClientTest.json", NSBundle(forClass: RecordedClientTests.self))!
+            return OHHTTPStubsResponse(fileAtPath: path, statusCode: 200, headers: ["Content-Type": "application/json"])
+        }
         RecordedClient.fetchRecordedList { (result) in
             switch result {
             case .Success:
@@ -63,6 +59,9 @@ class RecordedClientTests: XCTestCase {
                 // TODO なんかエラー表示する
                 XCTFail()
             }
+        }
+        waitForExpectationsWithTimeout(3) { error in
+            XCTFail()
         }
     }
 }

@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		830744ED1CF6880F00CA46BE /* Program.swift in Sources */ = {isa = PBXBuildFile; fileRef = 830744EC1CF6880F00CA46BE /* Program.swift */; };
 		8327F13A1CF1F21700424B94 /* String+HankakuZenkakuConverter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8327F1391CF1F21700424B94 /* String+HankakuZenkakuConverter.swift */; };
+		83486C961CFD1E5A00FFA250 /* OHHTTPStubs.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 83486C951CFD1E5A00FFA250 /* OHHTTPStubs.framework */; };
 		8350D0101CE4153A0087B1C5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8350D00F1CE4153A0087B1C5 /* AppDelegate.swift */; };
 		8350D0171CE4153A0087B1C5 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8350D0151CE4153A0087B1C5 /* Main.storyboard */; };
 		8350D0191CE4153A0087B1C5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8350D0181CE4153A0087B1C5 /* Assets.xcassets */; };
@@ -18,13 +19,11 @@
 		8364621E1CFBDD85006E67E1 /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 83E26C1E1CE56BCC00C9FBED /* Alamofire.framework */; };
 		8364621F1CFBDD85006E67E1 /* Async.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8307452E1CF7D2AB00CA46BE /* Async.framework */; };
 		836462201CFBDD85006E67E1 /* Mapper.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 830745301CF7D3C200CA46BE /* Mapper.framework */; };
-		836462211CFBDD85006E67E1 /* Mockingjay.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 83B869951CFBCC0600C493F2 /* Mockingjay.framework */; };
 		836462221CFBDD85006E67E1 /* Result.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8307452C1CF7D29B00CA46BE /* Result.framework */; };
 		836462231CFBDD85006E67E1 /* SwiftyJSON.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 830745311CF7D3C200CA46BE /* SwiftyJSON.framework */; };
 		836462241CFBDDA5006E67E1 /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 83E26C1E1CE56BCC00C9FBED /* Alamofire.framework */; settings = {ATTRIBUTES = (Required, ); }; };
 		836462251CFBDDA5006E67E1 /* Async.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8307452E1CF7D2AB00CA46BE /* Async.framework */; settings = {ATTRIBUTES = (Required, ); }; };
 		836462261CFBDDA5006E67E1 /* Mapper.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 830745301CF7D3C200CA46BE /* Mapper.framework */; settings = {ATTRIBUTES = (Required, ); }; };
-		836462271CFBDDA5006E67E1 /* Mockingjay.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 83B869951CFBCC0600C493F2 /* Mockingjay.framework */; settings = {ATTRIBUTES = (Required, ); }; };
 		836462281CFBDDA5006E67E1 /* Result.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8307452C1CF7D29B00CA46BE /* Result.framework */; settings = {ATTRIBUTES = (Required, ); }; };
 		836462291CFBDDA5006E67E1 /* SwiftyJSON.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 830745311CF7D3C200CA46BE /* SwiftyJSON.framework */; settings = {ATTRIBUTES = (Required, ); }; };
 		83B869991CFBCCD600C493F2 /* RecordedClientTest.json in Resources */ = {isa = PBXBuildFile; fileRef = 83B869971CFBCCD600C493F2 /* RecordedClientTest.json */; };
@@ -74,6 +73,7 @@
 		830745301CF7D3C200CA46BE /* Mapper.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Mapper.framework; path = Carthage/Build/iOS/Mapper.framework; sourceTree = "<group>"; };
 		830745311CF7D3C200CA46BE /* SwiftyJSON.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftyJSON.framework; path = Carthage/Build/iOS/SwiftyJSON.framework; sourceTree = "<group>"; };
 		8327F1391CF1F21700424B94 /* String+HankakuZenkakuConverter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "String+HankakuZenkakuConverter.swift"; path = "Utils/String+HankakuZenkakuConverter.swift"; sourceTree = "<group>"; };
+		83486C951CFD1E5A00FFA250 /* OHHTTPStubs.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OHHTTPStubs.framework; path = Carthage/Build/iOS/OHHTTPStubs.framework; sourceTree = "<group>"; };
 		8350D00C1CE4153A0087B1C5 /* ChinachuViewer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ChinachuViewer.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8350D00F1CE4153A0087B1C5 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		8350D0161CE4153A0087B1C5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -107,7 +107,6 @@
 				8364621E1CFBDD85006E67E1 /* Alamofire.framework in Frameworks */,
 				8364621F1CFBDD85006E67E1 /* Async.framework in Frameworks */,
 				836462201CFBDD85006E67E1 /* Mapper.framework in Frameworks */,
-				836462211CFBDD85006E67E1 /* Mockingjay.framework in Frameworks */,
 				836462221CFBDD85006E67E1 /* Result.framework in Frameworks */,
 				836462231CFBDD85006E67E1 /* SwiftyJSON.framework in Frameworks */,
 			);
@@ -117,10 +116,10 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				83486C961CFD1E5A00FFA250 /* OHHTTPStubs.framework in Frameworks */,
 				836462241CFBDDA5006E67E1 /* Alamofire.framework in Frameworks */,
 				836462251CFBDDA5006E67E1 /* Async.framework in Frameworks */,
 				836462261CFBDDA5006E67E1 /* Mapper.framework in Frameworks */,
-				836462271CFBDDA5006E67E1 /* Mockingjay.framework in Frameworks */,
 				836462281CFBDDA5006E67E1 /* Result.framework in Frameworks */,
 				836462291CFBDDA5006E67E1 /* SwiftyJSON.framework in Frameworks */,
 			);
@@ -176,6 +175,7 @@
 		8350D0031CE4153A0087B1C5 = {
 			isa = PBXGroup;
 			children = (
+				83486C951CFD1E5A00FFA250 /* OHHTTPStubs.framework */,
 				83B869951CFBCC0600C493F2 /* Mockingjay.framework */,
 				830745301CF7D3C200CA46BE /* Mapper.framework */,
 				830745311CF7D3C200CA46BE /* SwiftyJSON.framework */,
@@ -384,7 +384,6 @@
 				"$(SRCROOT)/Carthage/Build/iOS/SwiftyJSON.framework",
 				"$(SRCROOT)/Carthage/Build/iOS/Async.framework",
 				"$(SRCROOT)/Carthage/Build/iOS/Result.framework",
-				"$(SRCROOT)/Carthage/Build/iOS/Mockingjay.framework",
 			);
 			outputPaths = (
 			);
@@ -558,7 +557,7 @@
 					"$(PROJECT_DIR)/Carthage/Build/iOS",
 				);
 				INFOPLIST_FILE = ChinachuViewer/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = "@loader_path/../Frameworks $(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = tk.sobataro.ChinachuViewer;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
@@ -573,7 +572,7 @@
 					"$(PROJECT_DIR)/Carthage/Build/iOS",
 				);
 				INFOPLIST_FILE = ChinachuViewer/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = "@loader_path/../Frameworks $(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = tk.sobataro.ChinachuViewer;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
