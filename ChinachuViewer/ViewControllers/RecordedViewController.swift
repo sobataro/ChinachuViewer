@@ -61,7 +61,7 @@ extension RecordedViewController: UITableViewDataSource {
 
         channel.text          = recorded.program.channelName.hankakuOnlyNumberAlphabet
         title.text            = recorded.program.title.hankakuOnlyNumberAlphabet
-        dateTimeDuration.text = recorded.program.dateTimeDuration
+        dateTimeDuration.text = recorded.program.dateTimeDuration.stringByReplacingOccurrencesOfString(" ", withString: "\n")
 
         return cell
     }
