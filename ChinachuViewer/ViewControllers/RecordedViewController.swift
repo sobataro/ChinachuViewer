@@ -25,17 +25,29 @@ class RecordedViewController: UIViewController {
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
 
-        RecordedClient.fetchRecordedList { result in
+        fetchRecordedList()
+    }
+
+    func fetchRecordedList() {
+        // TODO ロード中にくるくるする
+        RecordedClient.fetchRecordedList { [weak self] result in
+            guard let strongSelf = self else {
+                return
+            }
             switch result {
             case .Success:
-                self.recordedList = result.value
-                print(self.recordedList)
-                self.tableView.reloadData()
+                strongSelf.recordedList = result.value
+                print(strongSelf.recordedList)
+                strongSelf.tableView.reloadData()
 
-                // TODO recordedList が nil または .count==0 の場合にエラー表示する
+            // TODO recordedList が nil または .count==0 の場合にエラー表示する? (いらない?)
             case .Failure:
-                // TODO なんかエラー表示する
-                print(result.error)
+                let alert = UIAlertController(title: "通信エラー", message: "サーバと通信できませんでした", preferredStyle: UIAlertControllerStyle.Alert)
+                alert.addAction(UIAlertAction(title: "Cancel", style: .Cancel, handler: nil))
+                alert.addAction(UIAlertAction(title: "Reload", style: .Default, handler: { (action) in
+                    strongSelf.fetchRecordedList()
+                }))
+                strongSelf.presentViewController(alert, animated: true, completion: nil)
             }
         }
     }

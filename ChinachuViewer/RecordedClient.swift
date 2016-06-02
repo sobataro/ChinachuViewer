@@ -22,7 +22,6 @@ class RecordedClient {
         case JSONParseError
     }
 
-//    static func fetchRecordedList(completionHandler: (recordedList: [Recorded]?, error: NSError?) -> Void) {
     static func fetchRecordedList(completionHandler: (Result<[Recorded], APIError>) -> Void) {
         let url = Constants.apiBaseUrl + path
 
