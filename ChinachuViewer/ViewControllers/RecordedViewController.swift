@@ -37,17 +37,25 @@ class RecordedViewController: UIViewController {
             switch result {
             case .Success:
                 strongSelf.recordedList = result.value
-                print(strongSelf.recordedList)
                 strongSelf.tableView.reloadData()
 
-            // TODO recordedList が nil または .count==0 の場合にエラー表示する? (いらない?)
+                // TODO recordedList が nil または .count==0 の場合にエラー表示する? (いらない?)
             case .Failure:
-                let alert = UIAlertController(title: "通信エラー", message: "サーバと通信できませんでした", preferredStyle: UIAlertControllerStyle.Alert)
-                alert.addAction(UIAlertAction(title: "Cancel", style: .Cancel, handler: nil))
-                alert.addAction(UIAlertAction(title: "Reload", style: .Default, handler: { (action) in
-                    strongSelf.fetchRecordedList()
-                }))
-                strongSelf.presentViewController(alert, animated: true, completion: nil)
+                guard let error = result.error else {
+                    return
+                }
+                switch error {
+                case .JSONParseError:
+                    AlertHelper.showAlertDialog(strongSelf, title: "サーバエラー", message: "サーバでエラーが発生しました", actions:
+                        UIAlertAction(title: "Cancel", style: .Cancel, handler: nil),
+                        UIAlertAction(title: "Reload", style: .Default, handler: { (action) in strongSelf.fetchRecordedList() })
+                    )
+                case .NetworkError:
+                    AlertHelper.showAlertDialog(strongSelf, title: "通信エラー", message: "サーバと通信できませんでした", actions:
+                        UIAlertAction(title: "Cancel", style: .Cancel, handler: nil),
+                        UIAlertAction(title: "Reload", style: .Default, handler: { (action) in strongSelf.fetchRecordedList() })
+                    )
+                }
             }
         }
     }
