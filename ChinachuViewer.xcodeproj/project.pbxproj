@@ -27,6 +27,10 @@
 		836462281CFBDDA5006E67E1 /* Result.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8307452C1CF7D29B00CA46BE /* Result.framework */; settings = {ATTRIBUTES = (Required, ); }; };
 		836462291CFBDDA5006E67E1 /* SwiftyJSON.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 830745311CF7D3C200CA46BE /* SwiftyJSON.framework */; settings = {ATTRIBUTES = (Required, ); }; };
 		8394DE651CFFC820003CD105 /* AlertHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8394DE641CFFC820003CD105 /* AlertHelper.swift */; };
+		8394DE691D011137003CD105 /* Former.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8394DE681D011137003CD105 /* Former.framework */; };
+		8394DE6A1D011169003CD105 /* Former.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8394DE681D011137003CD105 /* Former.framework */; };
+		8394DE6C1D011306003CD105 /* ConfigurationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8394DE6B1D011306003CD105 /* ConfigurationViewController.swift */; };
+		8394DE6E1D01131C003CD105 /* Configuration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8394DE6D1D01131C003CD105 /* Configuration.swift */; };
 		83B869991CFBCCD600C493F2 /* RecordedClientTest.json in Resources */ = {isa = PBXBuildFile; fileRef = 83B869971CFBCCD600C493F2 /* RecordedClientTest.json */; };
 		83B8699A1CFBCCD600C493F2 /* RecordedClientTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83B869981CFBCCD600C493F2 /* RecordedClientTest.swift */; };
 		83D8C27C1CF5351900429105 /* RecordedClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83D8C27B1CF5351800429105 /* RecordedClient.swift */; };
@@ -88,6 +92,9 @@
 		8350D0311CE4153A0087B1C5 /* ChinachuViewerUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChinachuViewerUITests.swift; sourceTree = "<group>"; };
 		8350D0331CE4153A0087B1C5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8394DE641CFFC820003CD105 /* AlertHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AlertHelper.swift; path = Utils/AlertHelper.swift; sourceTree = "<group>"; };
+		8394DE681D011137003CD105 /* Former.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Former.framework; path = Carthage/Build/iOS/Former.framework; sourceTree = "<group>"; };
+		8394DE6B1D011306003CD105 /* ConfigurationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ConfigurationViewController.swift; path = ViewControllers/ConfigurationViewController.swift; sourceTree = "<group>"; };
+		8394DE6D1D01131C003CD105 /* Configuration.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Configuration.swift; path = Entities/Configuration.swift; sourceTree = "<group>"; };
 		83B869951CFBCC0600C493F2 /* Mockingjay.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Mockingjay.framework; path = Carthage/Build/iOS/Mockingjay.framework; sourceTree = "<group>"; };
 		83B869971CFBCCD600C493F2 /* RecordedClientTest.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = RecordedClientTest.json; path = Clients/RecordedClientTest.json; sourceTree = "<group>"; };
 		83B869981CFBCCD600C493F2 /* RecordedClientTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RecordedClientTest.swift; path = Clients/RecordedClientTest.swift; sourceTree = "<group>"; };
@@ -106,6 +113,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8394DE6A1D011169003CD105 /* Former.framework in Frameworks */,
 				8364621E1CFBDD85006E67E1 /* Alamofire.framework in Frameworks */,
 				8364621F1CFBDD85006E67E1 /* Async.framework in Frameworks */,
 				836462201CFBDD85006E67E1 /* Mapper.framework in Frameworks */,
@@ -118,6 +126,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8394DE691D011137003CD105 /* Former.framework in Frameworks */,
 				83486C961CFD1E5A00FFA250 /* OHHTTPStubs.framework in Frameworks */,
 				836462241CFBDDA5006E67E1 /* Alamofire.framework in Frameworks */,
 				836462251CFBDDA5006E67E1 /* Async.framework in Frameworks */,
@@ -149,6 +158,7 @@
 		8327F1361CF1F1A900424B94 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				8394DE6B1D011306003CD105 /* ConfigurationViewController.swift */,
 				83D8C2811CF53AC600429105 /* RecordedDetailViewController.swift */,
 				83D8C2821CF53AC600429105 /* RecordedViewController.swift */,
 				83D8C2831CF53AC600429105 /* ReservedViewController.swift */,
@@ -159,8 +169,9 @@
 		8327F1371CF1F1B400424B94 /* Entities */ = {
 			isa = PBXGroup;
 			children = (
-				83D8C2871CF53AEB00429105 /* Recorded.swift */,
+				8394DE6D1D01131C003CD105 /* Configuration.swift */,
 				830744EC1CF6880F00CA46BE /* Program.swift */,
+				83D8C2871CF53AEB00429105 /* Recorded.swift */,
 			);
 			name = Entities;
 			sourceTree = "<group>";
@@ -168,9 +179,9 @@
 		8327F1381CF1F1EF00424B94 /* Utils */ = {
 			isa = PBXGroup;
 			children = (
-				8327F1391CF1F21700424B94 /* String+HankakuZenkakuConverter.swift */,
-				83D8C2891CF53F4000429105 /* GCD.swift */,
 				8394DE641CFFC820003CD105 /* AlertHelper.swift */,
+				83D8C2891CF53F4000429105 /* GCD.swift */,
+				8327F1391CF1F21700424B94 /* String+HankakuZenkakuConverter.swift */,
 			);
 			name = Utils;
 			sourceTree = "<group>";
@@ -178,13 +189,14 @@
 		8350D0031CE4153A0087B1C5 = {
 			isa = PBXGroup;
 			children = (
-				83486C951CFD1E5A00FFA250 /* OHHTTPStubs.framework */,
-				83B869951CFBCC0600C493F2 /* Mockingjay.framework */,
-				830745301CF7D3C200CA46BE /* Mapper.framework */,
-				830745311CF7D3C200CA46BE /* SwiftyJSON.framework */,
-				8307452E1CF7D2AB00CA46BE /* Async.framework */,
-				8307452C1CF7D29B00CA46BE /* Result.framework */,
 				83E26C1E1CE56BCC00C9FBED /* Alamofire.framework */,
+				8307452E1CF7D2AB00CA46BE /* Async.framework */,
+				8394DE681D011137003CD105 /* Former.framework */,
+				830745301CF7D3C200CA46BE /* Mapper.framework */,
+				83B869951CFBCC0600C493F2 /* Mockingjay.framework */,
+				83486C951CFD1E5A00FFA250 /* OHHTTPStubs.framework */,
+				8307452C1CF7D29B00CA46BE /* Result.framework */,
+				830745311CF7D3C200CA46BE /* SwiftyJSON.framework */,
 				8350D00E1CE4153A0087B1C5 /* ChinachuViewer */,
 				8350D0251CE4153A0087B1C5 /* ChinachuViewerTests */,
 				8350D0301CE4153A0087B1C5 /* ChinachuViewerUITests */,
@@ -205,15 +217,15 @@
 		8350D00E1CE4153A0087B1C5 /* ChinachuViewer */ = {
 			isa = PBXGroup;
 			children = (
-				83D8C27F1CF53A8F00429105 /* Constants.swift */,
-				83D8C27A1CF5350B00429105 /* Clients */,
-				8327F1381CF1F1EF00424B94 /* Utils */,
 				8350D00F1CE4153A0087B1C5 /* AppDelegate.swift */,
 				8350D0181CE4153A0087B1C5 /* Assets.xcassets */,
+				83D8C27A1CF5350B00429105 /* Clients */,
+				83D8C27F1CF53A8F00429105 /* Constants.swift */,
 				8327F1371CF1F1B400424B94 /* Entities */,
 				8350D01D1CE4153A0087B1C5 /* Info.plist */,
 				8350D01A1CE4153A0087B1C5 /* LaunchScreen.storyboard */,
 				8350D0151CE4153A0087B1C5 /* Main.storyboard */,
+				8327F1381CF1F1EF00424B94 /* Utils */,
 				8327F1361CF1F1A900424B94 /* ViewControllers */,
 			);
 			path = ChinachuViewer;
@@ -387,6 +399,7 @@
 				"$(SRCROOT)/Carthage/Build/iOS/SwiftyJSON.framework",
 				"$(SRCROOT)/Carthage/Build/iOS/Async.framework",
 				"$(SRCROOT)/Carthage/Build/iOS/Result.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/Former.framework",
 			);
 			outputPaths = (
 			);
@@ -406,7 +419,9 @@
 				83D8C2851CF53AC600429105 /* RecordedViewController.swift in Sources */,
 				83D8C2881CF53AEB00429105 /* Recorded.swift in Sources */,
 				8350D0101CE4153A0087B1C5 /* AppDelegate.swift in Sources */,
+				8394DE6C1D011306003CD105 /* ConfigurationViewController.swift in Sources */,
 				8327F13A1CF1F21700424B94 /* String+HankakuZenkakuConverter.swift in Sources */,
+				8394DE6E1D01131C003CD105 /* Configuration.swift in Sources */,
 				83D8C2841CF53AC600429105 /* RecordedDetailViewController.swift in Sources */,
 				83D8C27C1CF5351900429105 /* RecordedClient.swift in Sources */,
 				83D8C28A1CF53F4000429105 /* GCD.swift in Sources */,

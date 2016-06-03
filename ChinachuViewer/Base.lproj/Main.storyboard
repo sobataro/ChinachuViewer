@@ -26,7 +26,7 @@
                                         <rect key="frame" x="0.0" y="1" width="600" height="80"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Fxb-oX-enT" id="VZM-0o-kuJ">
-                                            <rect key="frame" x="0.0" y="0.0" width="600" height="79.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="600" height="80"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" tag="1" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Channel" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uWs-HF-Y0d">
@@ -198,6 +198,16 @@
             </objects>
             <point key="canvasLocation" x="750" y="360"/>
         </scene>
+        <!--Configuration-->
+        <scene sceneID="lQX-c5-LLk">
+            <objects>
+                <viewController title="Configuration" id="u5M-B4-PAD" userLabel="Configuration" customClass="ConfigurationViewController" customModule="ChinachuViewer" customModuleProvider="target" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="設定" id="vgo-S4-A2i" userLabel="設定"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="icX-GX-t5v" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="750" y="1069"/>
+        </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="yl2-sM-qoP">
             <objects>
@@ -211,16 +221,17 @@
                     <connections>
                         <segue destination="1rj-4j-K6T" kind="relationship" relationship="viewControllers" id="u7Y-xg-7CH"/>
                         <segue destination="8rJ-Kc-sve" kind="relationship" relationship="viewControllers" id="lzU-1b-eKA"/>
+                        <segue destination="u5M-B4-PAD" kind="relationship" relationship="viewControllers" id="ySF-A1-aSN"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="HuB-VB-40B" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="0.0" y="0.0"/>
         </scene>
-        <!--録画済-->
+        <!--Recorded-->
         <scene sceneID="oc8-D7-yeo">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="1rj-4j-K6T" sceneMemberID="viewController">
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="1rj-4j-K6T" userLabel="Recorded" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="録画済" image="first" id="acW-dT-cKf"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="BoL-xy-Ctk">
