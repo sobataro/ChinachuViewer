@@ -22,17 +22,17 @@ struct Program: Mappable {
     let end:         Int    // 1450526040000
     let seconds:     Int    // 7200
 
-    var dateTimeDuration: String {
-        get {
-            // FIXME あとでうまいことする、 NSDateFormatter の extension つくるとか
-            let dateFormatter = NSDateFormatter()
-            dateFormatter.dateFormat = "yyyy-MM-dd\nHH:mm"
+    var dateTime: String {
+        let dateFormatter = NSDateFormatter() // FIXME
+        dateFormatter.dateFormat = "yyyy-MM-dd HH:mm"
+        let startDate = NSDate(timeIntervalSince1970: NSTimeInterval(start / 1000))
+        let startDateString = dateFormatter.stringFromDate(startDate)
+        return startDateString
+    }
 
-            let startDate = NSDate(timeIntervalSince1970: NSTimeInterval(start / 1000))
-            let startDateString = dateFormatter.stringFromDate(startDate)
-            let durationText    = (seconds / 60).description + "min"
-            return startDateString + "\n" + durationText
-        }
+    var dateTimeDuration: String {
+        let durationText    = (seconds / 60).description + "min."
+        return dateTime + " " + durationText
     }
 
     init(map: Mapper) throws {

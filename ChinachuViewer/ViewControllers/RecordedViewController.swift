@@ -20,23 +20,42 @@ class RecordedViewController: UIViewController {
 
         tableView.dataSource = self
         tableView.delegate = self
-
     }
 
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
 
-        RecordedClient.fetchRecordedList { result in
+        fetchRecordedList()
+    }
+
+    func fetchRecordedList() {
+        // TODO ロード中にくるくるする
+        RecordedClient.fetchRecordedList { [weak self] result in
+            guard let strongSelf = self else {
+                return
+            }
             switch result {
             case .Success:
-                self.recordedList = result.value
-                print(self.recordedList)
-                self.tableView.reloadData()
+                strongSelf.recordedList = result.value
+                strongSelf.tableView.reloadData()
 
-                // TODO recordedList が nil または .count==0 の場合にエラー表示する
+                // TODO recordedList が nil または .count==0 の場合にエラー表示する? (いらない?)
             case .Failure:
-                // TODO なんかエラー表示する
-                print(result.error)
+                guard let error = result.error else {
+                    return
+                }
+                switch error {
+                case .JSONParseError:
+                    AlertHelper.showAlertDialog(strongSelf, title: "サーバエラー", message: "サーバでエラーが発生しました", actions:
+                        UIAlertAction(title: "Cancel", style: .Cancel, handler: nil),
+                        UIAlertAction(title: "Reload", style: .Default, handler: { (action) in strongSelf.fetchRecordedList() })
+                    )
+                case .NetworkError:
+                    AlertHelper.showAlertDialog(strongSelf, title: "通信エラー", message: "サーバと通信できませんでした", actions:
+                        UIAlertAction(title: "Cancel", style: .Cancel, handler: nil),
+                        UIAlertAction(title: "Reload", style: .Default, handler: { (action) in strongSelf.fetchRecordedList() })
+                    )
+                }
             }
         }
     }
@@ -61,7 +80,7 @@ extension RecordedViewController: UITableViewDataSource {
 
         channel.text          = recorded.program.channelName.hankakuOnlyNumberAlphabet
         title.text            = recorded.program.title.hankakuOnlyNumberAlphabet
-        dateTimeDuration.text = recorded.program.dateTimeDuration
+        dateTimeDuration.text = recorded.program.dateTimeDuration.stringByReplacingOccurrencesOfString(" ", withString: "\n")
 
         return cell
     }

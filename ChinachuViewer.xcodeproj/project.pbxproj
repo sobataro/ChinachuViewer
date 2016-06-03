@@ -26,6 +26,7 @@
 		836462261CFBDDA5006E67E1 /* Mapper.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 830745301CF7D3C200CA46BE /* Mapper.framework */; settings = {ATTRIBUTES = (Required, ); }; };
 		836462281CFBDDA5006E67E1 /* Result.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8307452C1CF7D29B00CA46BE /* Result.framework */; settings = {ATTRIBUTES = (Required, ); }; };
 		836462291CFBDDA5006E67E1 /* SwiftyJSON.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 830745311CF7D3C200CA46BE /* SwiftyJSON.framework */; settings = {ATTRIBUTES = (Required, ); }; };
+		8394DE651CFFC820003CD105 /* AlertHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8394DE641CFFC820003CD105 /* AlertHelper.swift */; };
 		83B869991CFBCCD600C493F2 /* RecordedClientTest.json in Resources */ = {isa = PBXBuildFile; fileRef = 83B869971CFBCCD600C493F2 /* RecordedClientTest.json */; };
 		83B8699A1CFBCCD600C493F2 /* RecordedClientTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83B869981CFBCCD600C493F2 /* RecordedClientTest.swift */; };
 		83D8C27C1CF5351900429105 /* RecordedClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83D8C27B1CF5351800429105 /* RecordedClient.swift */; };
@@ -86,6 +87,7 @@
 		8350D02D1CE4153A0087B1C5 /* ChinachuViewerUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ChinachuViewerUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		8350D0311CE4153A0087B1C5 /* ChinachuViewerUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChinachuViewerUITests.swift; sourceTree = "<group>"; };
 		8350D0331CE4153A0087B1C5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		8394DE641CFFC820003CD105 /* AlertHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AlertHelper.swift; path = Utils/AlertHelper.swift; sourceTree = "<group>"; };
 		83B869951CFBCC0600C493F2 /* Mockingjay.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Mockingjay.framework; path = Carthage/Build/iOS/Mockingjay.framework; sourceTree = "<group>"; };
 		83B869971CFBCCD600C493F2 /* RecordedClientTest.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = RecordedClientTest.json; path = Clients/RecordedClientTest.json; sourceTree = "<group>"; };
 		83B869981CFBCCD600C493F2 /* RecordedClientTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RecordedClientTest.swift; path = Clients/RecordedClientTest.swift; sourceTree = "<group>"; };
@@ -168,6 +170,7 @@
 			children = (
 				8327F1391CF1F21700424B94 /* String+HankakuZenkakuConverter.swift */,
 				83D8C2891CF53F4000429105 /* GCD.swift */,
+				8394DE641CFFC820003CD105 /* AlertHelper.swift */,
 			);
 			name = Utils;
 			sourceTree = "<group>";
@@ -399,6 +402,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				830744ED1CF6880F00CA46BE /* Program.swift in Sources */,
+				8394DE651CFFC820003CD105 /* AlertHelper.swift in Sources */,
 				83D8C2851CF53AC600429105 /* RecordedViewController.swift in Sources */,
 				83D8C2881CF53AEB00429105 /* Recorded.swift in Sources */,
 				8350D0101CE4153A0087B1C5 /* AppDelegate.swift in Sources */,
