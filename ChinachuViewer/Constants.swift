@@ -7,5 +7,10 @@
 //
 
 final class Constants {
-    let apiBaseUrl = "http://localhost:10772/api"
+    static let apiScheme = "http"
+    static let apiHost = "localhost"
+    static let apiPort = "10772"
+    static var apiBaseUrl: String {
+        return String(format: "%@://%@:%@/api", arguments: [apiScheme, apiHost, apiPort])
+    }
 }
