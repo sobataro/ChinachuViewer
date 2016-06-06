@@ -23,7 +23,7 @@ class RecordedClient {
     }
 
     static func fetchRecordedList(completionHandler: (Result<[Recorded], APIError>) -> Void) {
-        let url = Constants.apiBaseUrl + path
+        let url = Configuration.instance.apiBaseUrl + path
 
         Alamofire.request(.GET, url)
             .validate()

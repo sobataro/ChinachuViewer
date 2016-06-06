@@ -18,13 +18,15 @@ class ConfigurationViewController: UIViewController {
 
         let configuration = Configuration.instance
 
-        let serverAddressRow = TextFieldRowFormer<FormTextFieldCell>()
-            .configure { row in
-                row.text = configuration.serverAddress
+        let serverAddressRow = TextViewRowFormer<FormTextViewCell>() { view in
+                view.titleLabel.text = "Server URL"
             }
-            .onUpdate { row in
-                configuration.serverAddress = row.text ?? ""
-        }
+            .configure { row in
+                row.text = configuration.serverUrl
+            }
+            .onTextChanged { text in
+                configuration.serverUrl = text ?? ""
+            }
 
         let serverSectionHeader = LabelViewFormer<FormLabelHeaderView>()
             .configure { row in

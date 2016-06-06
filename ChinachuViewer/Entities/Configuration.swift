@@ -13,18 +13,28 @@ final class Configuration {
     static let instance = Configuration()
     private let userDefaults = NSUserDefaults.standardUserDefaults()
 
-    private let serverAddressKey = "serverAddress"
+    private let serverUrlKey = "serverUrl"
 
     private init() {
-        userDefaults.registerDefaults([serverAddressKey: "http://localhost:10772/"])
+        userDefaults.registerDefaults([serverUrlKey: "http://localhost:10772/"])
     }
 
-    var serverAddress: String {
+    var serverUrl: String {
         get {
-            return userDefaults.objectForKey(serverAddressKey) as! String
+            return userDefaults.objectForKey(serverUrlKey) as! String
         }
         set {
-            userDefaults.setObject(newValue, forKey: serverAddressKey)
+            // TODO: うまいことする
+            userDefaults.setObject(newValue, forKey: serverUrlKey)
+        }
+    }
+
+    var apiBaseUrl: String {
+        // TODO: うまいことする
+        if serverUrl.hasSuffix("/") {
+            return serverUrl + "api"
+        } else {
+            return serverUrl + "/api"
         }
     }
 }
